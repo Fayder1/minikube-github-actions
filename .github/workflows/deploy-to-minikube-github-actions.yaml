@@ -33,5 +33,8 @@ jobs:
 
       - name: Test service URLs
         run: |
+          echo "Waiting for pods to be ready..."
+          sleep 15
+          kubectl get pods
           minikube service list
           minikube service nodejs-app --url
